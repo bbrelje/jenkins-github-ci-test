@@ -4,7 +4,9 @@ pipeline {
     }
     stages {
         stage('Clone sources') {
-            checkout scm
+            steps {
+                checkout scm
+            }
         }
 
         stage('Test') {
