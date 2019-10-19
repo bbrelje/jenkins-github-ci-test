@@ -6,7 +6,6 @@ pipeline {
         stage('Clone sources') {
             steps {
                 checkout scm
-                sh "rm -r openconcept"
             }
         }
 
