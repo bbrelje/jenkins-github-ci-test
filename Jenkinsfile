@@ -12,7 +12,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh "cd openconcept && python3 -m pytest --cov-config .coveragerc --cov=openconcept --junitxml=result.xml && cp result.xml ../result.xml"
+                sh "cd openconcept && python3 -m pytest --cov-config .coveragerc --cov=openconcept --junitxml=result.xml"
+                sh "cp result.xml ../result.xml"
             }
         }
     }
