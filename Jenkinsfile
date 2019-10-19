@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git clean -fdx
                 checkout scm
             }
         }
