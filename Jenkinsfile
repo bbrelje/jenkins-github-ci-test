@@ -12,7 +12,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh "cd openconcept && python3 -m pytest --cov-config .coveragerc --cov=openconcept"
+                sh "cd openconcept && python3 -m pytest --cov-config .coveragerc --cov=openconcept --junitxml=..\result.xml"
             }
         }
     }
