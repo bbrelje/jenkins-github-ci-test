@@ -9,8 +9,9 @@ pipeline {
 
         stage('Test') {
             steps {
-                
-                sh 'cat /etc/os-release >> os.txt'
+                git clone https://github.com/mdolab/openconcept.git
+                cd openconcept
+                python3 -m pytest --cov-config .coveragerc --cov=openconcept
             }
         }
     }
