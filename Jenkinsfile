@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'ubuntu:18.04' }
-    }
+    agent {dockerfile true}
     stages {
         stage('Clone sources') {
             steps {
