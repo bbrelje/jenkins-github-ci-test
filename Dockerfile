@@ -7,18 +7,17 @@ RUN  apt-get update && \
      apt-get install python3 python3-pip git -y && \
      apt install sudo
 
-RUN groupadd -g 998 myappuser && \
-    adduser --uid 998 --gid 998 --disabled-password --gecos "" myappuser  && \
-    echo myappuser:linuxpassword | chpasswd && \
-    usermod -aG sudo myappuser && \
-    su myappuser
+# RUN groupadd -g 998 myappuser && \
+#     adduser --uid 998 --gid 998 --disabled-password --gecos "" myappuser  && \
+#     echo myappuser:linuxpassword | chpasswd && \
+#     usermod -aG sudo myappuser && \
+#     su myappuser
 
-USER myappuser
+# USER myappuser
 
-RUN mkdir $HOME/install
+# RUN mkdir $HOME/install
 
-COPY requirements.txt /home/myappuser/install/requirements.txt
+COPY requirements.txt /root/install/requirements.txt
 
-RUN cd $HOME/install && \
-    cat requirements.txt && \
+RUN cd $/root/install && \
     pip3 install -r requirements.txt
