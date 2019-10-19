@@ -5,7 +5,7 @@ pipeline {
         stage('Clone sources') {
             steps {
                 checkout scm
-                sh "rm -r openconcept"
+                sh "rm -r -f openconcept"
                 sh "git clone https://github.com/mdolab/openconcept.git"
             }
         }
