@@ -19,5 +19,5 @@ RUN  apt-get update && \
 
 COPY requirements.txt /root/install/requirements.txt
 
-RUN cd $/root/install && \
+RUN cd /root/install && \
     pip3 install -r requirements.txt
