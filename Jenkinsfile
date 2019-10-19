@@ -1,9 +1,12 @@
 pipeline {
-    agent {dockerfile true}
+    agent {dockerfile {
+        args '-u 998:998' }
+    }
     stages {
         stage('Clone sources') {
             steps {
                 checkout scm
+                sh "rm -r openconcept"
             }
         }
 
